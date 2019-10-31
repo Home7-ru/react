@@ -21,24 +21,18 @@ const AppHeader=()=>{
 };
 
 const SearchPanel=()=>{
+    //передаем значения атрибутов
+    const searchText='Type here to search';
     return(
-        <input placeholder="search"/>
+        <input placeholder = {searchText} />
     );
 };
 
 const App=()=>{
-    //если false то выводим если true то нет
-    const isLoggedIn = false;
 
-    const loginBox=<span>login in please</span>;
-    const welcomeBox=<span>login yes</span>;
-
-    //злоупотреблять логикой внутри jsx нужно знать меру
-    //если будет более большие куски нужно вынести во вне
     return(
         <div>
 
-            { isLoggedIn ? welcomeBox: loginBox}
             <AppHeader/>
             <SearchPanel/>
             <TodoList/>
