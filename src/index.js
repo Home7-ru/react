@@ -31,10 +31,14 @@ const App=()=>{
     const isLoggedIn = false;
 
     const loginBox=<span>login in please</span>;
+    const welcomeBox=<span>login yes</span>;
 
+    //злоупотреблять логикой внутри jsx нужно знать меру
+    //если будет более большие куски нужно вынести во вне
     return(
         <div>
-            { isLoggedIn ? null: loginBox}
+
+            { isLoggedIn ? welcomeBox: loginBox}
             <AppHeader/>
             <SearchPanel/>
             <TodoList/>
