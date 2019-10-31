@@ -30,13 +30,12 @@ const SearchPanel=()=>{
 //таким образом React отличает наши собственные компаненты от HTML тегов
 const App=()=>{
 
-    //используем элемент ниже в jsx разметки
-    const loginBox=<span>Login in please</span>;
+    //элемент может быть нулевым
+    const loginBox=null;
 
-    //вместо loginBox нельзя использовать например функцию new Date()
+    // элемент задействуется как  { loginBox } а компонент должен быть со стрелками <AppHeader/>
     return(
         <div>
-
             { loginBox }
             <AppHeader/>
             <SearchPanel/>
