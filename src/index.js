@@ -31,6 +31,7 @@ const SearchPanel=()=>{
 const App=()=>{
     return(
         <div>
+            <span>{(new Date()).toDateString()}</span>
             <AppHeader/>
             <SearchPanel/>
             <TodoList/>
