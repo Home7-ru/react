@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//компанент это функция которая возвращает react элемент
+
 const TodoList=()=>{
     return(
         <ul>
@@ -23,15 +23,17 @@ const SearchPanel=()=>{
     );
 };
 
-const el = (
-    <div>
-        <AppHeader/>
-        <SearchPanel/>
-        <TodoList/>
-    </div>
-)
+//компаненты должны писаться с большой буквы
+//таким образом React отличает наши собственные компаненты от HTML тегов
+const App=()=>{
+    return(
+        <div>
+            <AppHeader/>
+            <SearchPanel/>
+            <TodoList/>
+        </div>
+    );
+};
 
-
-
-
-ReactDOM.render(el, document.getElementById('root'));
+// В React передается  элемент <App/> а не компонент App
+ReactDOM.render(<App/>, document.getElementById('root'));
