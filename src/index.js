@@ -26,17 +26,15 @@ const SearchPanel=()=>{
     );
 };
 
-//компаненты должны писаться с большой буквы
-//таким образом React отличает наши собственные компаненты от HTML тегов
 const App=()=>{
+    //если false то выводим если true то нет
+    const isLoggedIn = false;
 
-    //элемент может быть нулевым
-    const loginBox=null;
+    const loginBox=<span>login in please</span>;
 
-    // элемент задействуется как  { loginBox } а компонент должен быть со стрелками <AppHeader/>
     return(
         <div>
-            { loginBox }
+            { isLoggedIn ? null: loginBox}
             <AppHeader/>
             <SearchPanel/>
             <TodoList/>
@@ -44,5 +42,5 @@ const App=()=>{
     );
 };
 
-// В React передается  элемент <App/> а не компонент App
+
 ReactDOM.render(<App/>, document.getElementById('root'));
