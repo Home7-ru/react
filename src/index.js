@@ -21,15 +21,15 @@ const AppHeader=()=>{
 };
 
 const SearchPanel=()=>{
-    //передаем значения атрибутов
+   
     const searchText='Type here to search';
-
-    // название html атрибутов в jsx пишутся немного по иному чем в html например autocomplete
-    // нужно писать autoComplete
-    // есть два исключения в html пишем class в jsx пишем className  аналогично for и htmlFor
-
+    const searchStyle ={
+        fontStyle:'25px'
+    }
     return(
-        <input placeholder = {searchText} autoComplete="" tabIndex=""/>
+        <input
+            style={ searchStyle }
+            placeholder={searchText} />
     );
 };
 
