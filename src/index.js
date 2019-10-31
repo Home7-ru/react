@@ -29,9 +29,15 @@ const SearchPanel=()=>{
 //компаненты должны писаться с большой буквы
 //таким образом React отличает наши собственные компаненты от HTML тегов
 const App=()=>{
+
+    //используем элемент ниже в jsx разметки
+    const loginBox=<span>Login in please</span>;
+
+    //вместо loginBox нельзя использовать например функцию new Date()
     return(
         <div>
-            <span>{(new Date()).toDateString()}</span>
+
+            { loginBox }
             <AppHeader/>
             <SearchPanel/>
             <TodoList/>
