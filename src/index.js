@@ -21,7 +21,7 @@ const AppHeader=()=>{
 };
 
 const SearchPanel=()=>{
-   
+
     const searchText='Type here to search';
     const searchStyle ={
         fontStyle:'25px'
@@ -34,10 +34,11 @@ const SearchPanel=()=>{
 };
 
 const App=()=>{
-
+    //выдаст на экране текст тоесть передать команды так нельзя
+    const value ='<script>alert("")</script>';
     return(
         <div>
-
+            {value}
             <AppHeader/>
             <SearchPanel/>
             <TodoList/>
