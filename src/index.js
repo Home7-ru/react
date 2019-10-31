@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 
 
 const TodoList=()=>{
+
+    const items =['Первая строка1','Вторая строка'];
+
     return(
         <ul>
-            <li> Первая строка</li>
-            <li> Вторая строка</li>
+            <li> { items[0] }</li>
+            <li> { items[1] }</li>
         </ul>
     );
 };
