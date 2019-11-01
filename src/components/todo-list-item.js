@@ -4,13 +4,9 @@ import './todo-list-item.css';
 
 export default class TodoListItem extends Component{
 
-    constructor(){
-        super();
-
-        this.onLabelClick = () =>{
-            console.log(`элемент: ${this.props.label}`)
-        }
-    }
+    onLabelClick = () => {
+        console.log(`элемент: ${this.props.label}`)
+    };
 
 
 
