@@ -8,19 +8,24 @@ export default class TodoListItem extends Component{
             done: false,
             important: false
         };
-    //после инициализации state его можно лишь читать но не изменять на прямую
-    //для изменения используют setState
+    //если новое состояние не зависит ни как от предыдущего можно использовать setstate
+    //и передовать внутрь объект, если же зависит как в примере то нужно вызывать функцию чтоб
+    //стейт изменился когда будет готов лекция 038 конец
+
     onLabelClick = () => {
-        this.setState({
-            done:true
-        });
+
+        this.setState(({done}) =>{
+            return {
+                done: !done
+            };
+        })
     };
 
     onMarkImportant = () =>{
 
-        this.setState((state) =>{
+        this.setState(({important}) =>{
             return {
-                important: !state.important
+                important: !important
             };
         })
     };
