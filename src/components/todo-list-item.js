@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-const TodoListItem =()=>{
-    return <li>Drink Cpffee</li>
+const TodoListItem =(props)=>{
+    return <li>{props.label}</li>
 };
 
 export default TodoListItem;
