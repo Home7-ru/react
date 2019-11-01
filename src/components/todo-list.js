@@ -9,7 +9,7 @@ const elements = todos.map((item)=>{
     const { id, ...itemProps }=item;
 
     return (
-        <li key={id}>
+        <li key={id} className="list-group-item">
 
             <TodoListItem {...itemProps }/>
         </li>
@@ -18,7 +18,7 @@ const elements = todos.map((item)=>{
 });
 
     return(
-        <ul>
+        <ul className="list-group">
             {elements}
         </ul>
     );
