@@ -8,7 +8,7 @@ const elements = todos.map((item)=>{
     //с помощью спред оператора для объекта можно записать так
     //
     return (
-        <li>
+        <li key={item.id}>
 
             <TodoListItem {...item }/>
         </li>
