@@ -5,12 +5,13 @@ const TodoList=({todos})=>{
     //перебираем массив todos
 
 const elements = todos.map((item)=>{
-    //с помощью спред оператора для объекта можно записать так
-    //
-    return (
-        <li key={item.id}>
+   // делаем диструткуризацию убирая из item   id
+    const { id, ...itemProps }=item;
 
-            <TodoListItem {...item }/>
+    return (
+        <li key={id}>
+
+            <TodoListItem {...itemProps }/>
         </li>
 
     )
