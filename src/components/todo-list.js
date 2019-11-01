@@ -5,10 +5,12 @@ const TodoList=({todos})=>{
     //перебираем массив todos
 
 const elements = todos.map((item)=>{
+    //с помощью спред оператора для объекта можно записать так
+    //
     return (
         <li>
-            <TodoListItem label={item.label}
-                          important={item.important}/>
+
+            <TodoListItem {...item }/>
         </li>
 
     )
