@@ -1,8 +1,8 @@
 import React from 'react';
 
-
-const TodoListItem =(props)=>{
-    return <li>{props.label}</li>
+//передали масив, через диструктуризацию смотреть урок по диструктуризации
+const TodoListItem =({label})=>{
+    return <li>{label}</li>
 };
 
 export default TodoListItem;
