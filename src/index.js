@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import AppHeader from './components/app-header';
 import SearchPanel from './components/search-panel';
 import TodoList from './components/todo-list';
+import ItemAddForm from './components/item-add-form';
 import ItemStatusFilter from './components/item-status-filter';
 
 import './index.css';
@@ -22,7 +23,7 @@ export default class App extends Component {
         this.setState(({todoData})=>{
 
             const idx = todoData.findIndex((el) => el.id === id);
-            
+
             //конструируем новый масив из всех элементов до нужного и после нужного
             const newArray=[...todoData.slice(0, idx), ...todoData.slice(idx + 1)];
 
@@ -46,6 +47,7 @@ export default class App extends Component {
             <TodoList todos={this.state.todoData}
                       onDeleted={this.deleteItem}
             />
+            <ItemAddForm/>
         </div>
         );
     }
