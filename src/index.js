@@ -19,7 +19,11 @@ export default class App extends Component {
     };
 
     deleteItem =(id)=>{
-        console.log(id);
+        this.setState(({todoData})=>{
+
+            const idx = todoData.findIndex((el) => el.id === id);
+            console.log(idx);
+        });
     };
 
     render() {
