@@ -22,7 +22,13 @@ export default class App extends Component {
         this.setState(({todoData})=>{
 
             const idx = todoData.findIndex((el) => el.id === id);
-            console.log(idx);
+            todoData.splice(idx,1);
+
+            //возврашаем новое состояние
+
+            return{
+                todoData: todoData
+            }
         });
     };
 
