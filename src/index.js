@@ -18,6 +18,9 @@ export default class App extends Component {
         ]
     };
 
+    deleteItem =(id)=>{
+        console.log(id);
+    };
 
     render() {
     return (
@@ -29,7 +32,7 @@ export default class App extends Component {
             </div>
 
             <TodoList todos={this.state.todoData}
-                      onDeleted={(id) => console.log('del', id)}
+                      onDeleted={this.deleteItem}
             />
         </div>
         );
