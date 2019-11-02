@@ -35,6 +35,10 @@ export default class App extends Component {
         });
     };
 
+    addItem =(text)=>{
+         console.log('Added',text)
+    };
+
     render() {
     return (
         <div className="todo-app">
@@ -47,7 +51,7 @@ export default class App extends Component {
             <TodoList todos={this.state.todoData}
                       onDeleted={this.deleteItem}
             />
-            <ItemAddForm/>
+            <ItemAddForm onItemAdded={this.addItem}/>
         </div>
         );
     }
