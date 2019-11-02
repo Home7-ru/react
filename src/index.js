@@ -22,23 +22,14 @@ export default class App extends Component {
         this.setState(({todoData})=>{
 
             const idx = todoData.findIndex((el) => el.id === id);
-            todoData.splice(idx,1);
-
-            //[a,b,c,d,e]
-            //[a,b,  d,e]
-            //берем элементы до удаленного
-            const before= todoData.slice(0, idx);
-
-            //берем элементы после удаленного
-            const after= todoData.slice(idx+1);
-
+            
             //конструируем новый масив из всех элементов до нужного и после нужного
-            const newArray=[...before, ...after];
+            const newArray=[...todoData.slice(0, idx), ...todoData.slice(idx + 1)];
 
             //возврашаем новое состояние
 
             return{
-                todoData: todoData
+                todoData: newArray
             }
         });
     };
