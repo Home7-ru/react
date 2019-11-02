@@ -1,4 +1,12 @@
 // выберет chris и создаст новый масив others = 'sandra', 'bob'
-const people1 = ['chris', 'sandra', 'bob'];
-const [a2, ...others] = people1;
-console.log(a2, others);
+
+const dict = {
+    duck: 'quack',
+    dog: 'wuff',
+    mouse: 'squeak',
+    hamster: "squeak"
+}
+// выберет все элементы с 'squeak'
+const res = Object.entries(dict)
+    .filter((arr) => arr[1] === 'squeak');
+console.log(res)
