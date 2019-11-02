@@ -1,4 +1,4 @@
-// выберет chris sandra guest
-const people = ['chris', 'sandra'];
-const [a1, b1, c1 = 'guest'] = people;
-console.log(a1, b1, c1);
+// выберет chris и создаст новый масив others = 'sandra', 'bob'
+const people1 = ['chris', 'sandra', 'bob'];
+const [a2, ...others] = people1;
+console.log(a2, others);
