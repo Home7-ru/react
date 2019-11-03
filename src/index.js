@@ -1,24 +1,28 @@
-/**
- * Created by SadAdmin on 12.01.2019.
- */
-//диструктуризация
+//Array Destructuring
+const fib = [1, 1, 2, 3, 5, 8, 13];
+const [, a, , b] = fib;
+console.log(a, b);
 
-const person ={
-    firstName: 'Peter',
-    lastName: 'Smith',
-    age: 27
-};
+const line = [[10, 17], [14, 7]];
+const [[p1x, p1y], [p2x, p2y]] = line;
 
-const{firstName,lastName}= person;
+console.log(p1x, p1y, p2x, p2y);
 
-console.log(firstName,lastName);
+const people = ['chris', 'sandra'];
+const [a1, b1, c1 = 'guest'] = people;
+console.log(a1, b1, c1);
 
-const person1 ={
-    name:{
-        first: 'Peter',
-        last: 'Smith'
-    },
-    age: 27
-};
-const{name:{first,last}}= person1;
-console.log(first,last);
+const people1 = ['chris', 'sandra', 'bob'];
+const [a2, ...others] = people1;
+console.log(others);
+
+const dict = {
+    duck: 'quack',
+    dog: 'wuff',
+    mouse: 'squeak',
+    hamster: "squeak"
+}
+// выберет все элементы с 'squeak'
+const res = Object.entries(dict)
+    .filter((arr) => arr[1] === 'squeak');
+console.log(res)
