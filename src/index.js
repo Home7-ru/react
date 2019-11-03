@@ -1,25 +1,72 @@
-const user ='bob';
-const num=17;
-//было
-const txt='hello'+user+'you have'+num+'letters';
+const x=10;
+const y=30;
+//было раньше
+const point1={
+    x:x,
+    y:y
 
-//стало
-const tst2=`heloo ${user} you ${num} letters`;
+};
+//стало сейчас
+const p1={x,y};
+//---------------------------
+//было раньше
+const point={
+    x:x,
+    y:y,
+    draw: function () {
+        //
+    }
+};
+//стало сейчас
+const p={x,y, draw(){}};
 
-// можно выводить и значения с функциями
+//-------------------------------
+const prefix='_blah_';
+const data={
+    [prefix+'name']:'bob',
+    [prefix+'age']:23
+};
+//{ _blah_name: 'bob', _blah_age: 23 }
 
-const tst3=`now is ${Date.now()}`;
+const defaults={
+    host:'localhost',
+    dbName: 'blog',
+    user:'admin'
+};
+const opts={
+    user:'john',
+    password: 'utopia'
+};
+//перезапишет defaults совместив с opts
+Object.assign(defaults,opts);
 
-console.log(tst3);
 
-const html=
-    '<ul>'+
-    '<li>Item One</li>'+
-    '<li>Item Two</li>'+
-    '</ul>';
-const items=['tea','coffee'];
-const tamplateHtml=`'<ul>
-    <li>${items[0]}</li>
-    <li>Item Two</li>
-    </ul>`;
-console.log(tamplateHtml);
+
+/*{ host: 'localhost',
+  dbName: 'blog',
+  user: 'john',
+  password: 'utopia' }
+  */
+const defaults1={
+    host:'localhost',
+    dbName: 'blog',
+    user:'admin'
+};
+const opts1={
+    user:'john',
+    password: 'utopia'
+};
+//так создаем обьедененый обект из двух
+const res=Object.assign({},defaults,opts);
+
+//------------------------------
+const person={
+    name:'Bob',
+    friends:['Mark','Jacob']
+};
+
+//------Зделать копию обьекта обьект получается сылочный
+const shallowCopy=Object.assign({},person);
+// если в новый обьект добавть новое имя он появться и в дублированном обьекте
+person.friends.push('jane');
+console.log(shallowCopy);
