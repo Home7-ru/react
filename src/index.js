@@ -1,17 +1,24 @@
 /**
  * Created by SadAdmin on 12.01.2019.
  */
-//Spred operator для иасссивов
-const arr=[1,2,3];
-const arr2=[8,9,10];
-const res= Math.max.apply(Math,arr);
+//диструктуризация
 
+const person ={
+    firstName: 'Peter',
+    lastName: 'Smith',
+    age: 27
+};
 
-const res1= Math.max(...arr);
+const{firstName,lastName}= person;
 
+console.log(firstName,lastName);
 
-const res2= Math.max(...arr,...arr2);
-console.log(res1);
-//так можно скопировать массив
-const shaloowCopy=[...arr, ...arr2];
-console.log(shaloowCopy);
+const person1 ={
+    name:{
+        first: 'Peter',
+        last: 'Smith'
+    },
+    age: 27
+};
+const{name:{first,last}}= person1;
+console.log(first,last);
