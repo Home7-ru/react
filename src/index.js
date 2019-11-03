@@ -1,25 +1,44 @@
-const defaults={
-    host:'localhost',
-    dbName: 'blog',
-    user:'admin'
-};
-const opts={
-    user:'john',
-    password: 'utopia'
-};
-//так создаем обьедененый обект из двух
-const res=Object.assign({},defaults,opts);
+//--------------------в браузере работает через вэб пак нет
 
-const res1={...defaults,...opts};
-//
-const port=8080;
-
-const res2={
-    ...defaults,
-    ...port,
-    port,
-    connect(){
-
-    }
+const getRecource = async(url)=>{
+    const res = await fetch(url);
+    const body = await res.json();
+    return body;
 };
-console.log(res1);
+
+getRecource('https://swapi.co/api/people/1/')
+    .then((body)=>{
+        console.log(body);
+    });
+//--------------------второй вариант
+
+fetch('https://swapi.co/api/people/1/')
+    .then(
+        function(response) {
+            if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                return;
+            }
+
+            // Examine the text in the response
+            response.json().then(function(data) {
+                console.log(data);
+            });
+        }
+    )
+    .catch(function(err) {
+        console.log('Fetch Error :-S', err);
+    });
+//-------------------до полученного объекта можно добраться так через деструктуризайию
+getRecource('https://swapi.co/api/people/1/')
+    .then((body)=>{
+        const {name}=body;
+        console.log(name);
+    });
+//----------------а можно так
+getRecource('https://swapi.co/api/people/1/')
+    .then((body)=>{
+
+        console.log(body.name);
+    });
