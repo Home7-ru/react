@@ -1,25 +1,20 @@
 /**
  * Created by SadAdmin on 12.01.2019.
  */
-//Параметры по умолчанию
-//было так
-function fetchOrders(count,start){
-    if(count===undefined){
-        count =10;
+//rest parametr
 
-    }
-    if(start===undefined){
-        start=0;
-    }
+function max(...numbers) {
+    console.log(numbers);
 }
-//стало так
-function fetchOrders(count=10,start=0){
-    console.log('count=',count,'start=',start);
-}
-//fetchOrders(15);
+max(1,5,6);
 
-// так можно установить обьект в пораметрах по умолчанию
-function findProducts(opts={ minPrice: 10, maxPrice: 20}){
-    console.log(opts);
+//вернет  массив
+//   [ 1 ][2][3]
+//  можно и с несколькими переменными
+function max(a,b,...numbers) {
+    console.log(numbers);
 }
-findProducts();
+// так нельзя первым рест параметр идти не может
+function max(...numbers,a,b,) {
+    console.log(numbers);
+}
