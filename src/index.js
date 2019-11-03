@@ -1,20 +1,17 @@
 /**
  * Created by SadAdmin on 12.01.2019.
  */
-//rest parametr
+//Spred operator для иасссивов
+const arr=[1,2,3];
+const arr2=[8,9,10];
+const res= Math.max.apply(Math,arr);
 
-function max(...numbers) {
-    console.log(numbers);
-}
-max(1,5,6);
 
-//вернет  массив
-//   [ 1 ][2][3]
-//  можно и с несколькими переменными
-function max(a,b,...numbers) {
-    console.log(numbers);
-}
-// так нельзя первым рест параметр идти не может
-function max(...numbers,a,b,) {
-    console.log(numbers);
-}
+const res1= Math.max(...arr);
+
+
+const res2= Math.max(...arr,...arr2);
+console.log(res1);
+//так можно скопировать массив
+const shaloowCopy=[...arr, ...arr2];
+console.log(shaloowCopy);
