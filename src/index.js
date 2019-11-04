@@ -1,76 +1,17 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+let bro = ['a','b','c','d'];
 
-import AppHeader from './components/app-header';
-import SearchPanel from './components/search-panel';
-import TodoList from './components/todo-list';
-import ItemAddForm from './components/item-add-form';
-import ItemStatusFilter from './components/item-status-filter';
+// выведет 0 1 2 3 тоесть просто переберет количества массива
+for(let per in bro){
+    console.log(per);
+}
+//переберет весь массив
+for(let index in bro){
+    console.log(bro[index]);
+}
 
-import './index.css';
+//переберет весь массив записывая в index1 все переменные
+for(let index1 of bro){
+    console.log(index1);
+}
 
-export default class App extends Component {
 
-    maxId=100;
-
-    state= {
-        todoData : [
-            {label: 'Drink Coffee', important: false, id: 1},
-            {label: 'Make Awesome App', important: true, id: 2},
-            {label: 'Have a lunch', important: false, id: 3}
-        ]
-    };
-
-    deleteItem =(id)=>{
-        this.setState(({todoData})=>{
-
-            const idx = todoData.findIndex((el) => el.id === id);
-
-            //конструируем новый масив из всех элементов до нужного и после нужного
-            const newArray=[...todoData.slice(0, idx), ...todoData.slice(idx + 1)];
-
-            //возврашаем новое состояние
-
-            return{
-                todoData: newArray
-            }
-        });
-    };
-
-    addItem =(text)=>{
-         const newItem={
-             label:text,
-             important:false,
-             id:this.maxId++
-         };
-         this.setState(({todoData}) => {
-             const newArr=[
-                 ...todoData,
-                 newItem
-             ];
-             return{
-                 todoData: newArr
-             }
-        });
-    };
-
-    render() {
-    return (
-        <div className="todo-app">
-            <AppHeader toDo={1} done={3}/>
-            <div className="top-panel d-flex">
-                <SearchPanel/>
-                <ItemStatusFilter/>
-            </div>
-
-            <TodoList todos={this.state.todoData}
-                      onDeleted={this.deleteItem}
-            />
-            <ItemAddForm onItemAdded={this.addItem}/>
-        </div>
-        );
-    }
-};
-
-ReactDOM.render(<App/>,
-    document.getElementById('root'));
