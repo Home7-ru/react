@@ -3,19 +3,18 @@ import './App.css';
 
 class App extends Component {
   render() {
+//так как это jsx то мы передаем объект
+    const divStyle={
+      'text-align':'center'
+    }
+// внутри jsx можно писать так
     return (
 
-// все элемнеты должны быть обернуты в корневой div
-
-
-      <div>
-         <div className="App">
-            <h1>Hello world!</h1>
+         <div style={divStyle}>
+            <h1 style={{color:'blue','font-size': '20px'}}>Hello world!</h1>
          </div>
-            <p>kkkkjj</p>
-      </div>
-//так работать не будет
-//<p>kkkkjj</p>
+
+
 
     );
 
