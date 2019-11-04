@@ -1,27 +1,12 @@
 import React from 'react';
 
-// function Car(){
-//     return(
-//         <div>This is car component</div>
-//     )
-// }
-
-
-//можно так
-// const Car =()=>{
-//     return(
-//         <div>This is car component</div>
-//     )
-// }
-
-//можно так
-
-//const Car =()=>(<div>This is car component</div>)
-
-//a можно так
+//если записать {1+1} то js видит это как js скрит если просто 1+1 то будет как строка
 const Car =()=>(
-    <div>This is car component
-    <strong>test</strong>
+    <div>
+        <p> This is car component</p>
+        <p><strong>{1+1}</strong></p>
+        <p><strong>{Math.random()}</strong></p>
+
     </div>
 
 )
