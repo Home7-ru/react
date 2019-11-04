@@ -14,7 +14,14 @@ class App extends Component {
   }
 
   changeTitleHandker = () => {
-    console.log('Clicked')
+
+    const oldtTitle = this.state.pageTitle;
+
+    const newtTitle = oldtTitle + '(changed)';
+
+    this.setState({
+      pageTitle:newtTitle
+    })
   }
 
   render() {
