@@ -5,11 +5,18 @@ class App extends Component {
   render() {
     return (
 
-// нужно использовать className вместо class в css
+// все элемнеты должны быть обернуты в корневой div
 
-      <div className="App">
-        <h1>Hello world!</h1>
+
+      <div>
+         <div className="App">
+            <h1>Hello world!</h1>
+         </div>
+            <p>kkkkjj</p>
       </div>
+//так работать не будет
+//<p>kkkkjj</p>
+
     );
 
   }
