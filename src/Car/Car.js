@@ -1,14 +1,12 @@
 import React from 'react';
 
-//если записать {1+1} то js видит это как js скрит если просто 1+1 то будет как строка
-const Car =()=>(
+// может быть так а может быть и без скобочек
+// const Car =(props)=>(
+const Car =props=>(
     <div>
-        <p> This is car component</p>
-        <p><strong>{1+1}</strong></p>
-        <p><strong>{Math.random()}</strong></p>
-
+        <h3>Car name:{props.name}</h3>
+        <p>Year: <strong>{props.year}</strong></p>
     </div>
 
 )
-
 export default Car
