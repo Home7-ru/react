@@ -8,7 +8,7 @@ class App extends Component {
         <h1>Hello world!</h1>
       </div>
     );
-
+//на самом деле вызывается вот такой код
     // return React.createElement(
     //   'div',
     //   {
