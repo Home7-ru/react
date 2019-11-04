@@ -1,12 +1,17 @@
-// выберет chris и создаст новый масив others = 'sandra', 'bob'
+// объеденит два массива
 
-const dict = {
-    duck: 'quack',
-    dog: 'wuff',
-    mouse: 'squeak',
-    hamster: "squeak"
+let a = ['a','b','c'];
+let b = ['a1','b1','c1'];
+
+let s =[...a, ...b];
+
+console.log(s);
+
+// так можно передать массив в функцию
+function add(x, y ,z){
+    console.log(x+y+z);
 }
-// выберет все элементы с 'squeak'
-const res = Object.entries(dict)
-    .filter((arr) => arr[1] === 'squeak');
-console.log(res)
+
+let numbers =[1,2,3];
+
+add(...numbers);
