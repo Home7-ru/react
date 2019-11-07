@@ -33,10 +33,19 @@ class App extends Component {
       textAlign:'center'
     }
 
-
-
-//внутри jsx нельзя использовать различные  циклы и условия но можно использовать тернарные операции
-// тоесть вот так нильзя if(this.state.showCars) а заменив на ? : все работает
+    let cars= null
+      if(this.state.showCars){
+          cars = this.state.cars.map((car, index)=> {
+              return (
+                  <Car
+                      key={index}
+                      name={car.name}
+                      year={car.year}
+                      onChangeTitle={() => this.changeTitleHandker(car.name)}
+                  />
+              )
+          })
+      }
     return (
 
          <div style={divStyle}>
@@ -45,18 +54,8 @@ class App extends Component {
 
            <button onClick={this.toggleCarsHandler}>toggle cars</button>
 
-             {   this.state.showCars ?
-                 this.state.cars.map((car, index)=> {
-                 return(
-                 <Car
-                     key={index}
-                   name={car.name}
-                   year={car.year}
-                   onChangeTitle={()=>this.changeTitleHandker(car.name)}
-                 />
-                 )
-               })
-                 :null
+             {
+                 cars
              }
 
          </div>
