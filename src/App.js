@@ -21,6 +21,10 @@ class App extends Component {
     })
   }
 
+  handleInput=(event)=>{
+      console.log('Changed')
+  }
+
   render() {
 
     const divStyle={
@@ -35,6 +39,7 @@ class App extends Component {
 
          <div style={divStyle}>
             <h1>{this.state.pageTitle}</h1>
+             <input type="text" onChange={this.handleInput}/>
 
            <button onClick={this.changeTitleHandker.bind(this, 'changed')}>Change title</button>
              <Car
