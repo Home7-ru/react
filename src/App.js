@@ -38,12 +38,12 @@ class App extends Component {
         })
     }
 
-    //если просто функция то та где вызываем используем bind
-    //можно использовать и стрелочную функцию
-    deleteHandler(){
-      this.setState({
-          pageTitle: 'Deleted'
-      })
+
+    deleteHandler(index){
+      const cars =this.state.cars.concat()
+        //производим удаление одного элемента
+      cars.splice(index,1)
+      this.setState({cars})
     }
 // index берется из метода map
   render() {
