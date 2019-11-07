@@ -9,7 +9,7 @@ const Car = props =>(
     }}>
         <h3>Car name:{props.name}</h3>
         <p>Year: <strong>{props.year}</strong></p>
-        <input type="text" onChange={props.onChangeName}/>
+        <input type="text" onChange={props.onChangeName} value={props.name}/>
         {/*<button onClick={props.onChangeTitle}>Click</button>*/}
 
     </div>

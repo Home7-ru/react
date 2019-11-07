@@ -24,8 +24,18 @@ class App extends Component {
   }
 
     onChangeName(name, index){
-      console.log(name, index )
 
+      const car = this.state.cars[index]
+      car.name = name
+//клонируем масив
+//старый метод
+
+          //const cars = this.state.cars.concat()
+        const cars = [...this.state.cars]
+        cars[index]=car
+        this.setState({
+            cars:cars
+        })
     }
 // index берется из метода map
   render() {
