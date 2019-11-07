@@ -30,23 +30,28 @@ class App extends Component {
     const cars= this.state.cars;
 
 // на сайте реакт есть описание всех событий
+// метод с bind более предпочтительный
     return (
 
          <div style={divStyle}>
             <h1>{this.state.pageTitle}</h1>
 
            <button onClick={this.changeTitleHandker.bind(this, 'changed')}>Change title</button>
-           <Car
+             <Car
                name={cars[0].name}
                year={cars[0].year}
                onChangeTitle={this.changeTitleHandker.bind(this, cars[0].name)}
            />
            <Car
                name={cars[1].name}
-               year={cars[1].year}/>
+               year={cars[1].year}
+               onChangeTitle={()=> this.changeTitleHandker(cars[1].name)}
+           />
            <Car
                name={cars[2].name}
-               year={cars[2].year}/>
+               year={cars[2].year}
+               onChangeTitle={()=> this.changeTitleHandker(cars[2].name)}
+           />
          </div>
 
 
