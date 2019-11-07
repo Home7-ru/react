@@ -37,6 +37,14 @@ class App extends Component {
             cars:cars
         })
     }
+
+    //если просто функция то та где вызываем используем bind
+    //можно использовать и стрелочную функцию
+    deleteHandler(){
+      this.setState({
+          pageTitle: 'Deleted'
+      })
+    }
 // index берется из метода map
   render() {
 
@@ -52,6 +60,7 @@ class App extends Component {
                       key={index}
                       name={car.name}
                       year={car.year}
+                      onDelete={this.deleteHandler.bind(this, index)}
                       onChangeName={event => this.onChangeName(event.target.value,index)}
                   />
               )
