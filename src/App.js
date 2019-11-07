@@ -23,10 +23,11 @@ class App extends Component {
     })
   }
 
-    changeTitleHandker=pageTitle =>{
-      this.setState({pageTitle})
-    }
+    onChangeName(name, index){
+      console.log(name, index )
 
+    }
+// index берется из метода map
   render() {
 
     const divStyle={
@@ -41,7 +42,7 @@ class App extends Component {
                       key={index}
                       name={car.name}
                       year={car.year}
-                      onChangeTitle={() => this.changeTitleHandker(car.name)}
+                      onChangeName={event => this.onChangeName(event.target.value,index)}
                   />
               )
           })
