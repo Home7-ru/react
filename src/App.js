@@ -13,11 +13,8 @@ class App extends Component {
     pageTitle: 'React components'
   }
 
-  changeTitleHandker = () => {
+  changeTitleHandker = (newtTitle) => {
 
-    const oldtTitle = this.state.pageTitle;
-
-    const newtTitle = oldtTitle + '(changed)';
 
     this.setState({
       pageTitle:newtTitle
@@ -38,11 +35,11 @@ class App extends Component {
          <div style={divStyle}>
             <h1>{this.state.pageTitle}</h1>
 
-           <button onClick={this.changeTitleHandker}>Change title</button>
+           <button onClick={this.changeTitleHandker.bind(this, 'changed')}>Change title</button>
            <Car
                name={cars[0].name}
                year={cars[0].year}
-               onChangeTitle={this.changeTitleHandker}
+               onChangeTitle={this.changeTitleHandker.bind(this, cars[0].name)}
            />
            <Car
                name={cars[1].name}
