@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   handleInput=(event)=>{
-      console.log('Changed')
+      console.log('Changed', event.target.value)
   }
 
   render() {
