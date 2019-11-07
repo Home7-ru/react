@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   handleInput=(event)=>{
-      
+
       this.setState(
           {
               pageTitle: event.target.value
@@ -36,7 +36,7 @@ class App extends Component {
       textAlign:'center'
     }
 
-    const cars= this.state.cars;
+
 
 // на сайте реакт есть описание всех событий
 // метод с bind более предпочтительный
@@ -47,21 +47,32 @@ class App extends Component {
              <input type="text" onChange={this.handleInput}/>
 
            <button onClick={this.changeTitleHandker.bind(this, 'changed')}>Change title</button>
-             <Car
-               name={cars[0].name}
-               year={cars[0].year}
-               onChangeTitle={this.changeTitleHandker.bind(this, cars[0].name)}
-           />
-           <Car
-               name={cars[1].name}
-               year={cars[1].year}
-               onChangeTitle={()=> this.changeTitleHandker(cars[1].name)}
-           />
-           <Car
-               name={cars[2].name}
-               year={cars[2].year}
-               onChangeTitle={()=> this.changeTitleHandker(cars[2].name)}
-           />
+
+             { this.state.cars.map((car, index)=> {
+                 return(
+                 <Car
+                     key={index}
+                   name={car.name}
+                   year={car.year}
+                   onChangeTitle={()=>this.changeTitleHandker(car.name)}
+                 />
+                 )
+             }) }
+             {/*<Car*/}
+               {/*name={cars[0].name}*/}
+               {/*year={cars[0].year}*/}
+               {/*onChangeTitle={this.changeTitleHandker.bind(this, cars[0].name)}*/}
+           {/*/>*/}
+           {/*<Car*/}
+               {/*name={cars[1].name}*/}
+               {/*year={cars[1].year}*/}
+               {/*onChangeTitle={()=> this.changeTitleHandker(cars[1].name)}*/}
+           {/*/>*/}
+           {/*<Car*/}
+               {/*name={cars[2].name}*/}
+               {/*year={cars[2].year}*/}
+               {/*onChangeTitle={()=> this.changeTitleHandker(cars[2].name)}*/}
+           {/*/>*/}
          </div>
 
 
