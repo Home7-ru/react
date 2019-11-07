@@ -10,25 +10,22 @@ class App extends Component {
       { name:'Audi', year: 2016},
       { name:'Mazda', year: 2010}
     ],
-    pageTitle: 'React components'
+    pageTitle: 'React components',
+    showCars: false
+
   }
 
-  changeTitleHandker = (newtTitle) => {
+    toggleCarsHandler = () => {
 
 
     this.setState({
-      pageTitle:newtTitle
+        showCars:!this.state.showCars
     })
   }
 
-  handleInput=(event)=>{
-
-      this.setState(
-          {
-              pageTitle: event.target.value
-          }
-      )
-  }
+    changeTitleHandker=pageTitle =>{
+      this.setState({pageTitle})
+    }
 
   render() {
 
@@ -38,17 +35,18 @@ class App extends Component {
 
 
 
-// на сайте реакт есть описание всех событий
-// метод с bind более предпочтительный
+//внутри jsx нельзя использовать различные  циклы и условия но можно использовать тернарные операции
+// тоесть вот так нильзя if(this.state.showCars) а заменив на ? : все работает
     return (
 
          <div style={divStyle}>
             <h1>{this.state.pageTitle}</h1>
-             <input type="text" onChange={this.handleInput}/>
 
-           <button onClick={this.changeTitleHandker.bind(this, 'changed')}>Change title</button>
 
-             { this.state.cars.map((car, index)=> {
+           <button onClick={this.toggleCarsHandler}>toggle cars</button>
+
+             {   this.state.showCars ?
+                 this.state.cars.map((car, index)=> {
                  return(
                  <Car
                      key={index}
@@ -57,22 +55,10 @@ class App extends Component {
                    onChangeTitle={()=>this.changeTitleHandker(car.name)}
                  />
                  )
-             }) }
-             {/*<Car*/}
-               {/*name={cars[0].name}*/}
-               {/*year={cars[0].year}*/}
-               {/*onChangeTitle={this.changeTitleHandker.bind(this, cars[0].name)}*/}
-           {/*/>*/}
-           {/*<Car*/}
-               {/*name={cars[1].name}*/}
-               {/*year={cars[1].year}*/}
-               {/*onChangeTitle={()=> this.changeTitleHandker(cars[1].name)}*/}
-           {/*/>*/}
-           {/*<Car*/}
-               {/*name={cars[2].name}*/}
-               {/*year={cars[2].year}*/}
-               {/*onChangeTitle={()=> this.changeTitleHandker(cars[2].name)}*/}
-           {/*/>*/}
+               })
+                 :null
+             }
+
          </div>
 
 
