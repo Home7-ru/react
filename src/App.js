@@ -74,12 +74,17 @@ class App extends Component {
 
            <button onClick={this.toggleCarsHandler}>toggle cars</button>
 
-             {
-                 cars
-             }
+             <div style={{
+                 width: 400,
+                 margin: 'aito',
+                 paddingTop: '20px'
+             }}>
+
+             { cars }
 
          </div>
 
+         </div>
 
 
     );

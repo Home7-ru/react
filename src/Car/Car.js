@@ -6,7 +6,10 @@ const Car = props =>(
     <div style={{
         border:'1px solid #ccc',
         marginBottom: '10px',
-        display: 'block'
+        display: 'block',
+        padding: '10px',
+        boxShadow: '10px 1px 1px red',
+        borderRadius: '5px'
     }}>
         <h3>Car name:{props.name}</h3>
         <p>Year: <strong>{props.year}</strong></p>
