@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 ReactDOM.render(
-    <App/>
+    <App title={'I am from props'}/>
 
     ,
     document.getElementById('root'));
