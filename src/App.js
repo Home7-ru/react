@@ -3,8 +3,11 @@ import './App.css';
 import Car from './Car/Car'
 
 class App extends Component {
-
+    // конструктор вызывается первым и он относится к возможностям js
+    //но не к api reacta и не является жизненым циклом react
     constructor(props){
+
+        console.log("constructor");
         super(props)
         this.state={
             cars: [
@@ -48,9 +51,21 @@ class App extends Component {
       cars.splice(index,1)
       this.setState({cars})
     }
+//срабатывает тогда когда происходит инициализация компонента
+    componentWillMount() {
+        console.log('App componentWillMount')
+    }
+//срабатывает тогда когда уже готов некоторый html
+    componentDidMount() {
+        console.log('App componentDidMount')
+    }
+
+
+
+
 // index берется из метода map
   render() {
-
+      console.log('render')
     const divStyle={
       textAlign:'center'
     }
