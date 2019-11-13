@@ -12,8 +12,8 @@ class App extends Component {
         this.state={
             cars: [
                 { name:'Ford', year: 2018},
-                { name:'Audi', year: 2016},
-                { name:'Mazda', year: 2010}
+                // { name:'Audi', year: 2016},
+                // { name:'Mazda', year: 2010}
             ],
             pageTitle: 'React components',
             showCars: false
@@ -52,7 +52,7 @@ class App extends Component {
       this.setState({cars})
     }
 //срабатывает тогда когда происходит инициализация компонента
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         console.log('App componentWillMount')
     }
 //срабатывает тогда когда уже готов некоторый html

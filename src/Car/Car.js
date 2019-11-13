@@ -4,7 +4,26 @@ import './Car.css'
 // может быть так а может быть и без скобочек
 // const Car =(props)=>(
 class Car extends React.Component{
+
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
+console.log('componentWillReceiveProps')
+}
+
+    UNSAFE_shouldComponentUpdate(nextProps, nextState, nextContext) {
+    console.log('shouldComponentUpdate')
+}
+
+    UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {
+    console.log('componentWillUpdate')
+}
+
+    UNSAFE_componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('componentDidUpdate')
+    return true
+}
+
     render(){
+        console.log('render')
 
         const inputClasses=['input']
 
@@ -41,4 +60,4 @@ class Car extends React.Component{
 }
 
 
-export default Radium(Car)
+export default Car
