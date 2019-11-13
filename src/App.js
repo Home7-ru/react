@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Car from './Car/Car'
-
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
 class App extends Component {
     // конструктор вызывается первым и он относится к возможностям js
     //но не к api reacta и не является жизненым циклом react
@@ -74,6 +74,7 @@ class App extends Component {
       if(this.state.showCars){
           cars = this.state.cars.map((car, index)=> {
               return (
+                  <ErrorBoundary key={index}>
                   <Car
                       key={index}
                       name={car.name}
@@ -81,6 +82,7 @@ class App extends Component {
                       onDelete={this.deleteHandler.bind(this, index)}
                       onChangeName={event => this.onChangeName(event.target.value,index)}
                   />
+                  </ErrorBoundary>
               )
           })
       }

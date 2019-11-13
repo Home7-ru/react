@@ -8,9 +8,9 @@ class Car extends React.Component{
 
 //позволяет получить неизмененное dom дерева для обновления
 
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log('getSnapshotBeforeUpdate')
-    }
+    // getSnapshotBeforeUpdate(prevProps, prevState) {
+    //     console.log('getSnapshotBeforeUpdate')
+    // }
 
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
 console.log('componentWillReceiveProps')
@@ -25,13 +25,13 @@ console.log('componentWillReceiveProps')
     console.log('componentWillUpdate')
 }
 
-static getDerivedStateFromProps(nextProps, prevState){
-    console.log('componentWillUpdate',nextProps,prevState)
-
-    return{
-
-    }
-}
+// static getDerivedStateFromProps(nextProps, prevState){
+//     console.log('componentWillUpdate',nextProps,prevState)
+//
+//     return{
+//
+//     }
+// }
 
 
 
@@ -47,6 +47,10 @@ componentWillUnmount() {
 
     render(){
         console.log('render')
+
+        if(Math.random()>0.7){
+           throw new Error('Car random failed')
+        }
 
         const inputClasses=['input']
 
