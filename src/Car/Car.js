@@ -9,8 +9,9 @@ class Car extends React.Component{
 console.log('componentWillReceiveProps')
 }
 
-    UNSAFE_shouldComponentUpdate(nextProps, nextState, nextContext) {
+   shouldComponentUpdate(nextProps, nextState, nextContext) {
     console.log('shouldComponentUpdate')
+       return nextProps.name.trim() !== this.props.name.trim()
 }
 
     UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {
