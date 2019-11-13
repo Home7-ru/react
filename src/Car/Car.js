@@ -5,6 +5,13 @@ import './Car.css'
 // const Car =(props)=>(
 class Car extends React.Component{
 
+
+//позволяет получить неизмененное dom дерева для обновления
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('getSnapshotBeforeUpdate')
+    }
+
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
 console.log('componentWillReceiveProps')
 }
@@ -17,6 +24,17 @@ console.log('componentWillReceiveProps')
     UNSAFE_componentWillUpdate(nextProps, nextState, nextContext) {
     console.log('componentWillUpdate')
 }
+
+static getDerivedStateFromProps(nextProps, prevState){
+    console.log('componentWillUpdate',nextProps,prevState)
+
+    return{
+
+    }
+}
+
+
+
 
     UNSAFE_componentDidUpdate(prevProps, prevState, snapshot) {
     console.log('componentDidUpdate')
