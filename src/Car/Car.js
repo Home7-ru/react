@@ -22,6 +22,10 @@ console.log('componentWillReceiveProps')
     console.log('componentDidUpdate')
     return true
 }
+//данный метод срабатывает когда идет разрушения компанента,и он удаляется из dom дерева
+componentWillUnmount() {
+    console.log('componentWillUnmount')
+}
 
     render(){
         console.log('render')
