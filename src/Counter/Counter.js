@@ -8,8 +8,18 @@ state={
 }
 
 addCounter=()=>{
-    this.setState({
-        counter:this.state.counter+1
+    // this.setState({
+    //     counter:this.state.counter+1
+    // })
+
+    //данный метод изменения state дает гарантию что мы изменяем именно последний state
+    //и другие компаненты не вмешаются в процесс изменения
+    // prevState означает взять предыдущее изменения
+    this.setState((prevState)=>{
+
+        return{
+            counter: prevState.counter +1
+        }
     })
 }
 
