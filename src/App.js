@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Car from './Car/Car'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
+import Counter from './Counter/Counter'
+
 class App extends Component {
     // конструктор вызывается первым и он относится к возможностям js
     //но не к api reacta и не является жизненым циклом react
@@ -91,8 +93,10 @@ class App extends Component {
          <div style={divStyle}>
             {/*<h1>{this.state.pageTitle}</h1>*/}
              <h1>{this.props.title}</h1>
-
-           <button onClick={this.toggleCarsHandler}>toggle cars</button>
+           <Counter/>
+           <button
+               style={{marginTop: 20}}
+               onClick={this.toggleCarsHandler}>toggle cars</button>
 
              <div style={{
                  width: 400,
