@@ -1,5 +1,5 @@
 import React from 'react';
-
+import withClass from '../hoc/withClass'
 import './Car.css'
 // может быть так а может быть и без скобочек
 // const Car =(props)=>(
@@ -24,17 +24,17 @@ class Car extends React.Component{
 
 
         return (
-            <div className="Car">
+            <React.Fragment>
                 <h3>Car name:{this.props.name}</h3>
                 <p>Year: <strong>{this.props.year}</strong></p>
                 <input type="text" onChange={this.props.onChangeName} value={this.props.name} className={inputClasses.join(' ')}/>
                 <button onClick={this.props.onDelete}>Delete</button>
 
-            </div>
+            </React.Fragment>
         )
 
     }
 }
 
 
-export default Car
+export default withClass(Car)
